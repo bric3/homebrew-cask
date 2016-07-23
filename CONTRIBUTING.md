@@ -52,7 +52,7 @@ $ git remote add "$github_user" "https://github.com/$github_user/homebrew-cask"
 
 ## Adding a Cask
 
-Notice an application that's not in Homebrew-Cask yet? Make sure it's not yet in [Homebrew-Versions](https://github.com/caskroom/homebrew-versions) (can be searched from the Github repository page) or [Homebrew](https://github.com/Homebrew/homebrew) (can be searched with `brew search`).
+Notice an application that's not in Homebrew-Cask yet? Make sure it's not yet in [Homebrew-Versions](https://github.com/caskroom/homebrew-versions) (can be searched from the Github repository page) or [Homebrew](https://github.com/Homebrew/homebrew) (can be searched with `brew search`). Mac App Store apps can't be installed via Homebrew-Cask, but check out [mas](https://github.com/argon/mas) for an alternative.
 
 With a bit of work, you can create a Cask for it. [This document](doc/development/adding_a_cask.md) will walk you through creating a new Cask, testing it, and submitting it to us.
 
@@ -60,7 +60,7 @@ With a bit of work, you can create a Cask for it. [This document](doc/developmen
 ## Style guide
 
 Some style guidelines:
-    
+
 * All Casks and code should be indented using two spaces (never tabs)
 * There should not be any extraneous comments - the only comments that should be used are the ones explicitly defined in the [Cask Language Reference](doc/cask_language_reference)
 * The stanza order and position of newlines is important to make things easier (See [Stanza order](doc/cask_language_reference/#stanza-order))

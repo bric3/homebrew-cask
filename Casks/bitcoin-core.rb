@@ -8,9 +8,18 @@ cask 'bitcoin-core' do
   license :mit
 
   conflicts_with cask: 'bitcoin-xt'
+  depends_on macos: '>= :lion'
 
   # Renamed for consistency: app name is different in the Finder and in a shell.
   app 'Bitcoin-Qt.app', target: 'Bitcoin Core.app'
+
+  preflight do
+    set_permissions "#{staged_path}/Bitcoin-Qt.app", '0755'
+  end
+
+  postflight do
+    set_permissions "#{appdir}/Bitcoin Core.app", '0555'
+  end
 
   zap delete: [
                 '~/Library/Preferences/org.bitcoin.Bitcoin-Qt.plist',

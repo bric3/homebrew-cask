@@ -1,8 +1,8 @@
 cask 'minecraft-server' do
-  version '1.9.2'
-  sha256 'a972d127be3b9d5fafe5bd610a173563cb24331b6664a3dc5f73b3cc76d77081'
+  version '1.10.2'
+  sha256 '195f468227c5f9218f3919538b9b16ba34adced67fc7d7b652c508a5e8d07a21'
 
-  # amazonaws.com is the official download host per the vendor homepage
+  # s3.amazonaws.com/Minecraft.Download was verified as official when first introduced to the cask
   url "https://s3.amazonaws.com/Minecraft.Download/versions/#{version}/minecraft_server.#{version}.jar"
   name 'Minecraft Server'
   homepage 'https://minecraft.net/'
@@ -27,9 +27,8 @@ cask 'minecraft-server' do
     set_permissions "#{staged_path}/minecraft-server", '+x'
     system 'minecraft-server'
 
-    file_name = "#{staged_path}/EULA.txt"
-    contents = File.read(file_name).gsub(%r{false}, 'true')
-    File.open(file_name, 'w') { |file| file.puts contents }
+    eula_file = "#{staged_path}/eula.txt"
+    IO.write(eula_file, File.read(eula_file).gsub('false', 'TRUE'))
   end
 
   caveats do

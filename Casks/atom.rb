@@ -1,11 +1,11 @@
 cask 'atom' do
-  version '1.7.3'
-  sha256 '7c8dcbd1acef6fa80f75613b828e008f190440d7fee32191e0dacc27002fb1aa'
+  version '1.8.0'
+  sha256 '5fe3c72a13164a97d33a9310ff8ee5c387d4151833dc3c45421b7ae90f558d7c'
 
   # github.com/atom/atom was verified as official when first introduced to the cask
   url "https://github.com/atom/atom/releases/download/v#{version}/atom-mac.zip"
   appcast 'https://github.com/atom/atom/releases.atom',
-          checkpoint: '86e693608b87f3fa8c89f01a712e71f7b1a1e58ce1f63dfde9239d24caedd08a'
+          checkpoint: '36482ec93a5bab3545b533fbb9f8c4fff5fa3bbe6180ec05c8d4f0ae2074ac93'
   name 'Github Atom'
   homepage 'https://atom.io/'
   license :mit
@@ -14,8 +14,8 @@ cask 'atom' do
   depends_on macos: '>= :mountain_lion'
 
   app 'Atom.app'
-  binary 'Atom.app/Contents/Resources/app/apm/node_modules/.bin/apm', target: 'apm'
-  binary 'Atom.app/Contents/Resources/app/atom.sh', target: 'atom'
+  binary "#{appdir}/Atom.app/Contents/Resources/app/apm/node_modules/.bin/apm", target: 'apm'
+  binary "#{appdir}/Atom.app/Contents/Resources/app/atom.sh", target: 'atom'
 
   postflight do
     suppress_move_to_applications

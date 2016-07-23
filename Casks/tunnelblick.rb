@@ -1,10 +1,10 @@
 cask 'tunnelblick' do
   if MacOS.release <= :snow_leopard
-    version '3.5.8_build_4270.4530'
-    sha256 'd634a9a5fd06f95c7325987197fb7890119bf0a40a3958284814958a14c20ce3'
+    version '3.5.9_build_4270.4560'
+    sha256 '7651754cab92c5f61fc22b55448875cf14fcf8b6f5b3ba469899740c49b6fae3'
   else
-    version '3.6.2_build_4558'
-    sha256 '2100baeb5b80e6c3d9058e330787efd5a184908f1154c119bbca7b6ec25a2fbd'
+    version '3.6.4a_build_4561'
+    sha256 'a2ed7027109d3edc34998abe72623e64d811e9c2a6c03c8c29ed0cce24617943'
   end
 
   url "https://www.tunnelblick.net/release/Tunnelblick_#{version}.dmg"

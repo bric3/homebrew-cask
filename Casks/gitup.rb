@@ -10,8 +10,9 @@ cask 'gitup' do
   homepage 'http://gitup.co'
   license :gpl
 
+  auto_updates true
   depends_on macos: '>= :mountain_lion'
 
   app 'GitUp.app'
-  binary 'GitUp.app/Contents/SharedSupport/gitup'
+  binary "#{appdir}/GitUp.app/Contents/SharedSupport/gitup"
 end

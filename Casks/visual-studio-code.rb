@@ -1,6 +1,6 @@
 cask 'visual-studio-code' do
-  version '1.0.0,fa6d0f03813dfb9df4589c30121e9fcffa8a8ec8'
-  sha256 '78b698bbc3968d64e30e056481ef32994f8aa66c934a62065dddbfed240d641a'
+  version '1.3.1,e6b4afa53e9c0f54edef1673de9001e9f0f547ae'
+  sha256 'e6a00c76cbfae19f57b7e8d8e2d3296f8507703a8a781652613a855191618b53'
 
   # az764295.vo.msecnd.net was verified as official when first introduced to the cask
   url "https://az764295.vo.msecnd.net/stable/#{version.after_comma}/VSCode-darwin-stable.zip"
@@ -12,7 +12,7 @@ cask 'visual-studio-code' do
   auto_updates true
 
   app 'Visual Studio Code.app'
-  binary 'Visual Studio Code.app/Contents/Resources/app/bin/code'
+  binary "#{appdir}/Visual Studio Code.app/Contents/Resources/app/bin/code"
 
   zap delete: [
                 '~/Library/Application Support/Code',

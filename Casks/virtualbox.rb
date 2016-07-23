@@ -1,10 +1,13 @@
 cask 'virtualbox' do
   if MacOS.release <= :lion
-    version '4.3.32-103443'
-    sha256 'dcfbd1d3014ab393dc5944a9474eeabf8b33471e7d95cb4c94070dc7acab772c'
+    version '4.3.38-106717'
+    sha256 'f7229f9537dc2359e2f86b2d3623e5024f11d2ce9b075fe34a71b55995897463'
+  elsif MacOS.release == :mountain_lion
+    version '5.0.26-108824'
+    sha256 'e8836a98adea9350917a41e754dfec4fe2df7c4a0224fd8beca72cbc5d778437'
   else
-    version '5.0.20-106931'
-    sha256 '804bfe75d40baf1a25ba025a07f440165868947ad2b41164ab0105cfa0fe6936'
+    version '5.1.2-108956'
+    sha256 '0e21615b6e1d1e2a030174b524939a34a91a268d436c3b913af14098acf23b44'
   end
 
   url "http://download.virtualbox.org/virtualbox/#{version.sub(%r{-.*}, '')}/VirtualBox-#{version}-OSX.dmg"
@@ -22,6 +25,10 @@ cask 'virtualbox' do
   zap delete: [
                 '/Library/Application Support/VirtualBox',
                 '~/Library/VirtualBox',
+                '~/Library/Preferences/org.virtualbox.app.VirtualBox.plist',
+                '~/Library/Preferences/org.virtualbox.app.VirtualBoxVM.plist',
+                '~/Library/Saved Application State/org.virtualbox.app.VirtualBox.savedState',
+                '~/Library/Saved Application State/org.virtualbox.app.VirtualBoxVM.savedState',
               ],
       rmdir:  '~/VirtualBox VMs'
 end

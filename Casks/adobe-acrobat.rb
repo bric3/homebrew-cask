@@ -1,8 +1,8 @@
 cask 'adobe-acrobat' do
   version '2015'
-  sha256 '4d7fe387f5c8f04ee9c959f7b41c4393d3b86d2689ee7b61ef2ae24ffe52c292'
+  sha256 :no_check # required as upstream package is updated in-place
 
-  url "http://trials3.adobe.com/AdobeProducts/APRO/Solstice_Acrobat#{version}/osx10/Acrobat_#{version}_Web_WWMUI.dmg",
+  url "http://trials3.adobe.com/AdobeProducts/APRO/Acrobat_HelpX/osx10/Acrobat_#{version}_Web_WWMUI.dmg",
       user_agent: :fake,
       cookies:    { 'MM_TRIALS' => '1234' }
   name 'Adobe Acrobat Pro DC'

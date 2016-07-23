@@ -1,6 +1,6 @@
 cask 'chefdk' do
-  version '0.13.21-1'
-  sha256 '283b2c6f70bc2bea0ad460df331bd2b16c4a04442b102d2beb882bd43faaf463'
+  version '0.16.28-1'
+  sha256 'd92b6a3b1f7d826a39044cb5827f362cae4d5a61c149c81f651e61fba33af323'
 
   url "https://packages.chef.io/stable/mac_os_x/10.11/chefdk-#{version}.dmg"
   name 'Chef Development Kit'
@@ -23,11 +23,17 @@ cask 'chefdk' do
                        '/usr/local/bin/chef-client',
                        '/usr/local/bin/chef-shell',
                        '/usr/local/bin/chef-solo',
+                       '/usr/local/bin/chef-zero',
+                       '/usr/local/bin/cookstyle',
+                       '/usr/local/bin/delivery',
                        '/usr/local/bin/fauxhai',
                        '/usr/local/bin/foodcritic',
                        '/usr/local/bin/kitchen',
                        '/usr/local/bin/knife',
                        '/usr/local/bin/ohai',
+                       '/usr/local/bin/push-apply',
+                       '/usr/local/bin/pushy-client',
+                       '/usr/local/bin/pushy-service-manager',
                        '/usr/local/bin/rubocop',
                      ]
 end

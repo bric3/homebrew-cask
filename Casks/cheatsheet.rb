@@ -1,10 +1,11 @@
 cask 'cheatsheet' do
-  version '1.2.3'
-  sha256 'cd89c3e247c93bc4574d5527a55464a8bac15af7f0be466c756684601ab5a2f9'
+  version '1.2.5'
+  sha256 '6bb6340f5e204d581d9516861504fd4e3a036a6e94b1c9a5a76127121a1f70ae'
 
+  # mediaatelier.com/CheatSheet was verified as official when first introduced to the cask
   url "https://mediaatelier.com/CheatSheet/CheatSheet_#{version}.zip"
   appcast 'https://mediaatelier.com/CheatSheet/feed.php',
-          checkpoint: '18270e7f33e3c4d49637eae97a805ebb1beabe28b027bd83a3731b687b2acf80'
+          checkpoint: '76bebd775e105d108f5f786017fe6c4f6e4fa7b5a73314304adb138b42508374'
   name 'CheatSheet'
   homepage 'https://www.cheatsheetapp.com/CheatSheet/'
   license :gratis

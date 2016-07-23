@@ -8,7 +8,7 @@ Each of the following stanzas is required for every Cask.
 | ------------------ |------------------------------ | ----------- |
 | `version`          | no                            | application version; give value of `:latest`  if versioned downloads are not offered
 | `sha256`           | no                            | SHA-256 checksum of the file downloaded from `url`, calculated by the command `shasum -a 256 <file>`. Can be suppressed by using the special value `:no_check` (see also [Checksum Stanza Details](stanzas/sha256.md))
-| `url`              | no                            | URL to the `.dmg`/`.zip`/`.tgz`/`.tbz2` file that contains the application. A [comment](stanzas/url.md#when-url-and-homepage-hostnames-differ-add-a-comment) should be added if the hostnames in the `url` and `homepage` stanzas differ (see also [URL Stanza Details](stanzas/url.md))
+| `url`              | no                            | URL to the `.dmg`/`.zip`/`.tgz`/`.tbz2` file that contains the application.<br />A [comment](stanzas/url.md#when-url-and-homepage-hostnames-differ-add-a-comment) should be added if the hostnames in the `url` and `homepage` stanzas differ. Block syntax should be used for URLs that change on every visit.<br />See [URL Stanza Details](stanzas/url.md) for more information.
 | `name`             | yes                           | a string providing the full and proper name defined by the vendor (see also [Name Stanza Details](stanzas/name.md))
 | `homepage`         | no                            | application homepage; used for the `brew cask home` command
 | `license`          | no                            | a symbol identifying the license category for the application (see also [License Stanza Details](stanzas/license.md))
@@ -19,7 +19,7 @@ Each Cask must declare one or more *artifacts* (i.e. something to install).
 
 | name               | multiple occurrences allowed? | value       |
 | ------------------ |------------------------------ | ----------- |
-| `app`              | yes                           | relative path to an `.app` that should be linked into the `~/Applications` folder on installation (see also [App Stanza Details](stanzas/app.md))
+| `app`              | yes                           | relative path to an `.app` that should be moved into the `/Applications` folder on installation (see also [App Stanza Details](stanzas/app.md))
 | `pkg`              | yes                           | relative path to a `.pkg` file containing the distribution (see also [Pkg Stanza Details](stanzas/pkg.md))
 | `binary`           | yes                           | relative path to a Binary that should be linked into the `/usr/local/bin` folder on installation
 | `colorpicker`      | yes                           | relative path to a ColorPicker plugin that should be linked into the `~/Library/ColorPickers` folder on installation
@@ -33,8 +33,8 @@ Each Cask must declare one or more *artifacts* (i.e. something to install).
 | `audio_unit_plugin`| yes                           | relative path to an Audio Unit plugin that should be linked into the `~/Library/Audio/Components` folder on installation
 | `vst_plugin`       | yes                           | relative path to a VST Plugin that should be linked into the `~/Library/Audio/VST` folder on installation
 | `vst3_plugin`      | yes                           | relative path to a VST3 Plugin that should be linked into the `~/Library/Audio/VST3` folder on installation
-| `suite`            | yes                           | relative path to a containing directory that should be linked into the `~/Applications` folder on installation (see also [Suite Stanza Details](stanzas/suite.md))
-| `artifact`         | yes                           | relative path to an arbitrary path that should be symlinked on installation. This is only for unusual cases. The `app` stanza is strongly preferred when linking `.app` bundles.
+| `suite`            | yes                           | relative path to a containing directory that should be moved into the `/Applications` folder on installation (see also [Suite Stanza Details](stanzas/suite.md))
+| `artifact`         | yes                           | relative path to an arbitrary path that should be symlinked on installation. Must provide an absolute path as a `target` (example [alcatraz.rb](https://github.com/caskroom/homebrew-cask/blob/312ae841f1f1b2ec07f4d88b7dfdd7fbdf8d4f94/Casks/alcatraz.rb#L12)). This is only for unusual cases. The `app` stanza is strongly preferred when linking `.app` bundles.
 | `installer`        | yes                           | describes an executable which must be run to complete the installation (see [Installer Stanza Details](stanzas/installer.md))
 | `stage_only`       | no                            | `true`. Assert that the Cask contains no activatable artifacts.
 

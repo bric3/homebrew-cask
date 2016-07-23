@@ -1,11 +1,11 @@
 cask 'mongochef' do
-  version '3.5.1'
-  sha256 'ee6fde6fc849226def9f550cbdc4db1b3bf0fd8f842abe81c9ede84e0b0cb498'
+  version '4.0.4'
+  sha256 '2aca68eb9108a244b344eb2bb03d31a3d823df278cad64f6e74a9a36ffc3bbaa'
 
-  url "https://cdn.3t.io/mongochef/mac/#{version}/MongoChef.dmg"
+  url "https://cdn.3t.io/mongochef-core/mac/#{version}/MongoChef.dmg"
   name 'MongoChef'
   homepage 'https://3t.io/mongochef/'
   license :other
 
-  app '3T MongoChef.app'
+  app 'MongoChef.app'
 end

@@ -1,9 +1,9 @@
 cask 'phpstorm' do
-  version '2016.1'
-  sha256 'b30a67f22cfd331eec5599b4ae5957e10fb9f75b45e48a7ffd638adf77b2810d'
+  version '2016.2'
+  sha256 '3b431f0fb4f3446b9b6aa808af1606929a65dc4329165b1d2fccad9b2e79ee90'
 
   url "https://download.jetbrains.com/webide/PhpStorm-#{version}.dmg"
-  name 'PhpStorm'
+  name 'JetBrains PhpStorm'
   homepage 'https://www.jetbrains.com/phpstorm/'
   license :commercial
 
@@ -12,7 +12,6 @@ cask 'phpstorm' do
   uninstall delete: '/usr/local/bin/pstorm'
 
   zap delete: [
-                "~/.PhpStorm#{version.major_minor}",
                 "~/Library/Preferences/PhpStorm#{version.major_minor}",
                 "~/Library/Caches/PhpStorm#{version.major_minor}",
                 "~/Library/Logs/PhpStorm#{version.major_minor}",

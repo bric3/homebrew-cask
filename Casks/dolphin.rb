@@ -1,8 +1,8 @@
 cask 'dolphin' do
-  version '4.0-9230'
-  sha256 'fd193bf0bc204d50d79e9cfc0df5a41fe81f43f8d6cfae61eeb24141a12a484b'
+  version '5.0'
+  sha256 '1e7127cf9b110c5d7feabc0d05f620bad31d0f47a1d16e1f46e2e402d0ec233c'
 
-  url "https://dl.dolphin-emu.org/builds/dolphin-master-#{version}.dmg"
+  url "https://dl-mirror.dolphin-emu.org/#{version}/dolphin-#{version}.dmg"
   name 'Dolphin'
   homepage 'https://dolphin-emu.org/'
   license :gpl
